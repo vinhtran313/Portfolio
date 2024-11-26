@@ -38,10 +38,10 @@ const calculateProfit = async () => {
   const VNT = moment().tz("Asia/Ho_Chi_Minh");
   const currentHour = VNT.hour();
 
-  if (currentHour >= 0 && currentHour < 8) {
-    console.log("Không chạy trong giờ ngủ");
-    return;
-  } else {
+  // if (currentHour >= 0 && currentHour < 8) {
+  //   console.log("Không chạy trong giờ ngủ");
+  //   return;
+  // } else {
     const trades = await Trade.find({ closed: false });
     const user = await User.findOne({ name: "BabyMango" });
     let totalProfit = 0;
@@ -88,7 +88,7 @@ const calculateProfit = async () => {
       message += ` - ${item.symbol}: ${item.price} - Lợi nhuận: ${item.profit}\n`;
     });
     bot.sendMessage(user.chatId, message);
-  }
+  // }
 };
 
 const PORT = 3000;
