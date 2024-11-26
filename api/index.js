@@ -5,8 +5,8 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const app = express();
 const cron = require("node-cron");
-const User = require("./schema/user");
-const Trade = require("./schema/trade");
+const User = require("../schema/user");
+const Trade = require("../schema/trade");
 const TelegramBot = require("node-telegram-bot-api");
 const moment = require("moment-timezone");
 
